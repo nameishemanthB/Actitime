@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Login is successfull]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on Users module]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on new user button]]>
+    </line>
+    <line>
+      <![CDATA[Provided required details]]>
+    </line>
+    <line>
+      <![CDATA[Selected the department]]>
+    </line>
+    <line>
+      <![CDATA[Selected date]]>
+    </line>
+    <line>
+      <![CDATA[Selected Overtime Tracking option]]>
+    </line>
+    <line>
+      <![CDATA[clicked on save & send Invitation button]]>
+    </line>
+    <line>
+      <![CDATA[New user is added Successfully and able to see the new user in the userlist page]]>
+    </line>
+  </reporter-output>
+  <suite name="Suite" duration-ms="31562" started-at="2020-06-23T13:25:33 IST" finished-at="2020-06-23T13:26:04 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="31562" started-at="2020-06-23T13:25:33 IST" finished-at="2020-06-23T13:26:04 IST">
+      <class name="com.actitime.TestCases.TestCase_TC001">
+        <test-method status="PASS" signature="launchApp(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.actitime.TestCases.TestCase_TC001@64729b1e]" name="launchApp" is-config="true" duration-ms="15719" started-at="2020-06-23T13:25:33 IST" finished-at="2020-06-23T13:25:48 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://demo.actitime.com/login.do]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method status="PASS" signature="loginToApp(java.lang.String, java.lang.String)[pri:0, instance:com.actitime.TestCases.TestCase_TC001@64729b1e]" name="loginToApp" is-config="true" duration-ms="5397" started-at="2020-06-23T13:25:48 IST" finished-at="2020-06-23T13:25:54 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[manager]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Login is successfull]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginToApp -->
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.actitime.TestCases.TestCase_TC001@64729b1e]" name="test1" duration-ms="9442" started-at="2020-06-23T13:25:54 IST" finished-at="2020-06-23T13:26:03 IST">
+          <reporter-output>
+            <line>
+              <![CDATA[Clicked on Users module]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on new user button]]>
+            </line>
+            <line>
+              <![CDATA[Provided required details]]>
+            </line>
+            <line>
+              <![CDATA[Selected the department]]>
+            </line>
+            <line>
+              <![CDATA[Selected date]]>
+            </line>
+            <line>
+              <![CDATA[Selected Overtime Tracking option]]>
+            </line>
+            <line>
+              <![CDATA[clicked on save & send Invitation button]]>
+            </line>
+            <line>
+              <![CDATA[New user is added Successfully and able to see the new user in the userlist page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.actitime.TestCases.TestCase_TC001@64729b1e]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-06-23T13:26:03 IST" finished-at="2020-06-23T13:26:03 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test1 status=SUCCESS method=TestCase_TC001.test1()[pri:0, instance:com.actitime.TestCases.TestCase_TC001@64729b1e] output=Clicked on Users module]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:com.actitime.TestCases.TestCase_TC001@64729b1e]" name="closeApp" is-config="true" duration-ms="939" started-at="2020-06-23T13:26:03 IST" finished-at="2020-06-23T13:26:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApp -->
+      </class> <!-- com.actitime.TestCases.TestCase_TC001 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
