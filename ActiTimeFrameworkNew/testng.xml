@@ -3,8 +3,8 @@
 <suite name="Suite">
   	<parameter name="browserName" value="chrome"/>
 	<parameter name="appUrl" value="https://demo.actitime.com/login.do"/>
-	<parameter name="ITO" value="20"/>
-	<parameter name="ETO" value="20"/>
+	<parameter name="ITO" value="50"/>
+	<parameter name="ETO" value="50"/>
 	<parameter name="un" value="admin"/>
 	<parameter name="pwd" value="manager"/>
 	

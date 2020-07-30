@@ -14,8 +14,8 @@ public interface IAutoConstants
 	
 	String APP_URL ="https://demo.actitime.com/login.do";
 	String BROWSER_NAME="chrome";
-	String ETO="20";	
-	String ITO="20";
+	String ETO="50";	
+	String ITO="50";
 	String USERNAME="admin";
 	String PASSWORD="manager";
 }

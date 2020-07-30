@@ -39,6 +39,7 @@ public class WebActionUtil
 	{
 		Select select = new Select(target);
 		select.selectByVisibleText(text);
+		//select.deselectByIndex(i);
 	}
 	
 	public void mouseHover(WebElement target)

@@ -15,7 +15,9 @@ public class TimeTrackPage extends BasePage
 	@FindBy(id="addTaskButtonId")
 	private WebElement newButton;
 	
-	@FindBy(xpath="//tr[@class='selectCustomerRow']//div[@class='comboboxButton']//div[@class='dropdownButton']")
+//	@FindBy(xpath="//tr[@class='selectCustomerRow']//div[@class='comboboxButton']//div[@class='dropdownButton']")
+//	@FindBy(xpath="//div[@class='dropdownButton']")
+	@FindBy(xpath="//div[@class='searchItemList']/../../../..//div[.='- New Customer -']")
 	private WebElement selectCustomerAndProjectToAddTasksDropDown;
 	
 	@FindBy(xpath="//input[@placeholder='Enter Customer Name']")
@@ -39,17 +41,17 @@ public class TimeTrackPage extends BasePage
 	@FindBy(className="components_button withPlusIcon")
 	private WebElement createTasks;
 	
-	@FindBy(xpath="//span[.='AkshataS']")
-	private WebElement name;
-	
-	@FindBy(xpath="//span[.='AkshataS']/../../../../../..//div[@class='taskButton removeTaskButton']")
-	private WebElement hideRowLink;
-	
-	@FindBy(xpath="//input[@id='SubmitTTButton']/..//span[contains(@class,'cancelButton')]")
-	private WebElement cancelButton;
-	
-	@FindBy(id="SubmitTTButton")
-	private WebElement saveChangesButton;
+//	@FindBy(xpath="//span[.='AkshataS']")
+//	private WebElement name;
+//	
+//	@FindBy(xpath="//span[.='AkshataS']/../../../../../..//div[@class='taskButton removeTaskButton']")
+//	private WebElement hideRowLink;
+//	
+//	@FindBy(xpath="//input[@id='SubmitTTButton']/..//span[contains(@class,'cancelButton')]")
+//	private WebElement cancelButton;
+//	
+//	@FindBy(id="SubmitTTButton")
+//	private WebElement saveChangesButton;
 	
 	public TimeTrackPage(WebDriver driver, WebActionUtil webActionUtil) 
 	{
@@ -67,9 +69,9 @@ public class TimeTrackPage extends BasePage
 		webActionUtil.clickOnElement(newButton);
 	}
 	
-	public void clickOnSelectCustomerAndProjectToAddTasksDropDown(String text)
+	public void clickOnSelectCustomerAndProjectToAddTasksDropDown(String firstText)
 	{
-		webActionUtil.selectDropDownText(selectCustomerAndProjectToAddTasksDropDown, text);
+		webActionUtil.selectDropDownText(selectCustomerAndProjectToAddTasksDropDown, firstText);
 	}
 	
 	public void clickOnEnterCustomerName(String customerName)
@@ -109,4 +111,7 @@ public class TimeTrackPage extends BasePage
 	{
 		webActionUtil.clickOnElement(createTasks);
 	}
+
+
+	 
 }
