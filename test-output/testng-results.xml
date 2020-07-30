@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="90509" started-at="2020-07-30T23:25:27 IST" finished-at="2020-07-30T23:26:58 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="90509" started-at="2020-07-30T23:25:27 IST" finished-at="2020-07-30T23:26:58 IST">
+      <class name="testcases.KTC001">
+        <test-method status="PASS" signature="launchApp(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testcases.KTC001@184f6be2]" name="launchApp" is-config="true" duration-ms="28321" started-at="2020-07-30T23:25:27 IST" finished-at="2020-07-30T23:25:56 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://online.actitime.com/qspiders2/login.do]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method status="PASS" signature="loginToApp(java.lang.String, java.lang.String)[pri:0, instance:testcases.KTC001@184f6be2]" name="loginToApp" is-config="true" duration-ms="1331" started-at="2020-07-30T23:25:56 IST" finished-at="2020-07-30T23:25:57 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[kapiljain.kns@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Universe1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToApp -->
+        <test-method status="PASS" signature="scrollpage()[pri:0, instance:testcases.KTC001@184f6be2]" name="scrollpage" duration-ms="55272" started-at="2020-07-30T23:25:57 IST" finished-at="2020-07-30T23:26:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scrollpage -->
+        <test-method status="PASS" signature="logoutFromApp(org.testng.ITestResult)[pri:0, instance:testcases.KTC001@184f6be2]" name="logoutFromApp" is-config="true" duration-ms="4357" started-at="2020-07-30T23:26:52 IST" finished-at="2020-07-30T23:26:57 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=scrollpage status=SUCCESS method=KTC001.scrollpage()[pri:0, instance:testcases.KTC001@184f6be2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutFromApp -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:testcases.KTC001@184f6be2]" name="closeApp" is-config="true" duration-ms="1131" started-at="2020-07-30T23:26:57 IST" finished-at="2020-07-30T23:26:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApp -->
+      </class> <!-- testcases.KTC001 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
