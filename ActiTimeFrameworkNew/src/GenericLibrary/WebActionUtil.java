@@ -1,5 +1,6 @@
 package GenericLibrary;
 
+//import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -46,5 +47,33 @@ public class WebActionUtil
 		action.moveToElement(target).perform();
 	}
 	
-		
+//	/*
+//	 * Method should scroll to Top
+//	 * 
+//	 */
+//	public void scrollToTop()
+//	{
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("window.scrollBy(document.body.scrollHeight,0)");
+//	}
+//	
+//	/*
+//	 * Method should scroll to End of the Page
+//	 * 
+//	 */
+//	public void scrollToEnd() 
+//	{
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+//	}
+//	
+//	/*
+//	 * Method should scroll to Element
+//	 * 
+//	 */
+//	public void scrollToElement() 
+//	{
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].scrollIntoView();",target);
+//	}		
 }

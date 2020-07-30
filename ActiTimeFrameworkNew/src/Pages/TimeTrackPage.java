@@ -39,7 +39,17 @@ public class TimeTrackPage extends BasePage
 	@FindBy(className="components_button withPlusIcon")
 	private WebElement createTasks;
 	
+	@FindBy(xpath="//span[.='AkshataS']")
+	private WebElement name;
 	
+	@FindBy(xpath="//span[.='AkshataS']/../../../../../..//div[@class='taskButton removeTaskButton']")
+	private WebElement hideRowLink;
+	
+	@FindBy(xpath="//input[@id='SubmitTTButton']/..//span[contains(@class,'cancelButton')]")
+	private WebElement cancelButton;
+	
+	@FindBy(id="SubmitTTButton")
+	private WebElement saveChangesButton;
 	
 	public TimeTrackPage(WebDriver driver, WebActionUtil webActionUtil) 
 	{
