@@ -3,7 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.TC001">
+      <class name="TestCases.TC002">
         <methods>
           <include name="enterTimeTrack"/>
           <include name="logoutFromApp"/>
@@ -11,7 +11,7 @@
           <include name="closeApp"/>
           <include name="loginToApp"/>
         </methods>
-      </class> <!-- TestCases.TC001 -->
+      </class> <!-- TestCases.TC002 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
