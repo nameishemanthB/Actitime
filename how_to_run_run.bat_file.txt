@@ -1,0 +1,21 @@
+===============
+RUN USING cmd
+===============
+1. goto your eclipse->Rt.clk. on project->goto properties->copy the path
+2. open cmd and first check maven version using=> mvn -version
+3. then cd-space-and  project path location
+
+		cd D:\QSpider_Java_Selenium\Project\Automation_Project\Actitime\ActiTime
+
+4. mvn clean install
+
+===================
+RUN USING .bat file
+===================
+1. Rt.clk. and create one text file
+2. open this text file as notepad and write these 2 commands in this "run.bat"
+
+3. 		cd D:\QSpider_Java_Selenium\Project\Automation_Project\Actitime\ActiTime
+		mvn clean install
+
+4. and "Save-As" with inverted quotes "run.bat" now double click on this "run.bat" file

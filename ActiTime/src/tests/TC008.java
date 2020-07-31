@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 import genericlibs.ExcelLibrary;
 import pages.HomePage;
 import pages.LoginPage;
-public class TC004 extends BaseTest
+public class TC008 extends BaseTest
 {
 	@Test
 	public void HomePageTest()
@@ -16,5 +16,6 @@ public class TC004 extends BaseTest
 		l.clickLogin();	
 		HomePage h = new HomePage(driver);
 		h.clickRadio();
+		h.clickLogout();
 	}
 }
