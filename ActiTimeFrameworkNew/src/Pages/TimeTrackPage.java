@@ -12,10 +12,12 @@ public class TimeTrackPage extends BasePage
 	@FindBy(id="container_tt")
 	private WebElement timeTrack;
 	
-	@FindBy(id="addTaskButtonId")
+//	@FindBy(id="addTaskButtonId")
+	@FindBy(xpath="//span[contains(text(),'New')]")
 	private WebElement newButton;
 	
-	@FindBy(xpath="//tr[@class='selectCustomerRow']//div[@class='comboboxButton']//div[@class='dropdownButton']")
+//	@FindBy(xpath="//div[@class='searchItemList']/../../../..//div[.='- New Customer -']")
+	@FindBy(xpath="//div[contains(text(),'New Customer')]")
 	private WebElement selectCustomerAndProjectToAddTasksDropDown;
 	
 	@FindBy(xpath="//input[@placeholder='Enter Customer Name']")
@@ -39,10 +41,10 @@ public class TimeTrackPage extends BasePage
 	@FindBy(className="components_button withPlusIcon")
 	private WebElement createTasks;
 	
-	@FindBy(xpath="//span[.='AkshataS']")
+	@FindBy(xpath="//span[.='Akshata']")
 	private WebElement name;
 	
-	@FindBy(xpath="//span[.='AkshataS']/../../../../../..//div[@class='taskButton removeTaskButton']")
+	@FindBy(xpath="//span[.='Akshata']/../../../../../..//div[@class='taskButton removeTaskButton']")
 	private WebElement hideRowLink;
 	
 	@FindBy(xpath="//input[@id='SubmitTTButton']/..//span[contains(@class,'cancelButton')]")
@@ -51,11 +53,14 @@ public class TimeTrackPage extends BasePage
 	@FindBy(id="SubmitTTButton")
 	private WebElement saveChangesButton;
 	
+	
+	
 	public TimeTrackPage(WebDriver driver, WebActionUtil webActionUtil) 
 	{
 		super(driver, webActionUtil);
 	}
 
+	
 
 	public void clickOnTimeTrack()
 	{
@@ -72,6 +77,16 @@ public class TimeTrackPage extends BasePage
 		webActionUtil.selectDropDownText(selectCustomerAndProjectToAddTasksDropDown, text);
 	}
 	
+//	public void clickOnSelectCustomerAndProjectToAddTasksDropDown(int i)
+//	{
+//		webActionUtil.selectDropDownText(selectCustomerAndProjectToAddTasksDropDown, i);
+//	}
+	
+//	public void clickOnSelectCustomerAndProjectToAddTasksDropDown(String text)
+//	{
+//		webActionUtil.enterKeys(selectCustomerAndProjectToAddTasksDropDown, text);
+//	}
+
 	public void clickOnEnterCustomerName(String customerName)
 	{
 		webActionUtil.enterKeys(enterCustomerName, customerName);
@@ -108,5 +123,25 @@ public class TimeTrackPage extends BasePage
 	public void clickOnCreateTasks()
 	{
 		webActionUtil.clickOnElement(createTasks);
+	}
+	
+	public void clickOnhideRowLink()
+	{
+		webActionUtil.clickOnElement(hideRowLink);
+	}
+	
+	public void clickOncancelButton()
+	{
+		webActionUtil.clickOnElement(cancelButton);
+	}
+	
+	public void clickOnConfirmationPopUp()
+	{
+		webActionUtil.confirmationPopUp();
+	}
+	
+	public void clickOnsaveChangesButton()
+	{
+		webActionUtil.clickOnElement(saveChangesButton);
 	}
 }

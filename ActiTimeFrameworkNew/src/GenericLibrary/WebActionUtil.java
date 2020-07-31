@@ -1,5 +1,8 @@
 package GenericLibrary;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 //import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,39 +44,55 @@ public class WebActionUtil
 		select.selectByVisibleText(text);
 	}
 	
+	public void selectDropDownText(WebElement target, int i)
+	{
+		Select select = new Select(target);
+		select.selectByIndex(i);
+	}
+	
 	public void mouseHover(WebElement target)
 	{
 		Actions action = new Actions(driver);
 		action.moveToElement(target).perform();
 	}
 	
-//	/*
-//	 * Method should scroll to Top
-//	 * 
-//	 */
-//	public void scrollToTop()
-//	{
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
+	public void confirmationPopUp()
+	{
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+	}
+	
+	/*
+	 * Method should scroll to Top
+	 * 
+	 */
+	public void scrollToTop()
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 //		js.executeScript("window.scrollBy(document.body.scrollHeight,0)");
-//	}
-//	
-//	/*
-//	 * Method should scroll to End of the Page
-//	 * 
-//	 */
-//	public void scrollToEnd() 
-//	{
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-500)");
+	}
+	
+	/*
+	 * Method should scroll to End of the Page
+	 * 
+	 */
+	public void scrollToEnd() 
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 //		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
-//	}
-//	
-//	/*
-//	 * Method should scroll to Element
-//	 * 
-//	 */
-//	public void scrollToElement() 
-//	{
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].scrollIntoView();",target);
-//	}		
+		js.executeScript("window.scrollBy(0,500)");
+	}
+	
+	/*
+	 * Method should scroll to Element
+	 * 
+	 */
+	public void scrollToElement() 
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement ele=driver.findElement(By.xpath("//span[.=' Home']"));
+		js.executeScript("arguments[0].scrollIntoView();", ele);
+		return;
+	}		
 }
