@@ -62,6 +62,11 @@ public class WebActionUtil
 		alert.accept();
 	}
 	
+	public void clickOnCheckbox(WebElement checkbox)
+	{
+		checkbox.click();
+	}
+	
 	/*
 	 * Method should scroll to Top
 	 * 

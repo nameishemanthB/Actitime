@@ -1,9 +1,10 @@
 package TestCases;
 
 import org.testng.annotations.Test;
+
 import Pages.TimeTrackPage;
 
-public class TC001 extends BaseTest
+public class TC004 extends BaseTest
 {
 	@Test
 	public void enterTimeTrack()
@@ -15,11 +16,8 @@ public class TC001 extends BaseTest
 		timeTrackPage.clickOnSelectCustomerAndProjectToAddTasksDropDown("- New Customer -");
 		timeTrackPage.clickOnEnterCustomerName("Akshata");
 		timeTrackPage.clickOnEnterProjectName("Eagle");
-		timeTrackPage.clickOnEnterTaskName("Automate 100 Test Cases");
-		timeTrackPage.clickOnEstimateHours("5");
-		timeTrackPage.clickOnSetDeadlineDate();
-		timeTrackPage.clickOnCalenderBoxRightArrowButton("August 2020", "3");
-		timeTrackPage.clickOnCreateTasks();
-	
-	}
+		timeTrackPage.clickOncopyPropertiesLink();
+		timeTrackPage.clickOnCustomerDropDown("Akshata");
+		timeTrackPage.clickOnCheckboxOfTask();
+	}	
 }

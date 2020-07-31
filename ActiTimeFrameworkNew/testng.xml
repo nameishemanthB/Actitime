@@ -12,6 +12,9 @@
     <classes>
       <class name="TestCases.TC001"/>
       <class name="TestCases.TC002"/>
+      <class name="TestCases.TC003"/>
+      <class name="TestCases.TC004"/>
+      <class name="TestCases.TC005"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

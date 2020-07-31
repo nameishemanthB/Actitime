@@ -1,9 +1,10 @@
 package TestCases;
 
 import org.testng.annotations.Test;
+
 import Pages.TimeTrackPage;
 
-public class TC001 extends BaseTest
+public class TC003 extends BaseTest
 {
 	@Test
 	public void enterTimeTrack()
@@ -20,6 +21,10 @@ public class TC001 extends BaseTest
 		timeTrackPage.clickOnSetDeadlineDate();
 		timeTrackPage.clickOnCalenderBoxRightArrowButton("August 2020", "3");
 		timeTrackPage.clickOnCreateTasks();
+		timeTrackPage.clickOnCreatedTask();
+		timeTrackPage.clickOnActionDropDown();
+		timeTrackPage.clickOnDeleteButton();
+		timeTrackPage.clickOnDeletePermanantlyButton();
 	
 	}
 }

@@ -15,7 +15,7 @@ public class TC002 extends BaseTest
 		timeTrackPage.clickOnNewButton();
 		timeTrackPage.clickOnSelectCustomerAndProjectToAddTasksDropDown("- New Customer -");
 		timeTrackPage.clickOnEnterCustomerName("Akshata");
-		timeTrackPage.clickOnEnterProjectName("Actitime");
+		timeTrackPage.clickOnEnterProjectName("Eagle");
 		timeTrackPage.clickOnEnterTaskName("Automate 100 Test Cases");
 		timeTrackPage.clickOnEstimateHours("5");
 		timeTrackPage.clickOnSetDeadlineDate();
