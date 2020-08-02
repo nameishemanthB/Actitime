@@ -2,9 +2,10 @@ package pages;
 import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import org.testng.Reporter;
 
 public class LoginPage
 {
@@ -75,15 +76,21 @@ public class LoginPage
 		return images.size();
 	}
 	
-	public boolean verifyTitle(String title)
-	{
-		return title.equals(expectedTitle);
-	}
 	
-	public void verifyErrorMessge()
-	{
-		boolean actual = error.isDisplayed();
-		Assert.assertEquals(actual, true);
-	}
+    
+    public void VerifyErrormsgColor()
+    {
+    	String expectedHexa="#Ce0100";
+        String ColorValue=error.getCssValue("color");
+        String actualHexa=Color.fromString(ColorValue).asHex();
+    	if(expectedHexa.equals(actualHexa))
+    	{
+    		Reporter.log("Error massage is in red color");
+    	}
+    	else
+    	{
+    		Reporter.log("Error massage is in red color");
+    	}
+    }
 	
 }
