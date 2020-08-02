@@ -3,50 +3,88 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
-import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
-import genericlibs.GenericPropertyLib;
 import genericlibs.GetPhoto;
 import genericlibs.IAutoConstants;
-
-public abstract class BaseTest implements IAutoConstants
+import genericlibs.WebActionUtil;
+import pages.HomePage;
+import pages.LoginPage;
+public class BaseTest implements IAutoConstants
 {
-	public WebDriver driver;
-	static
+public WebDriver driver;
+public WebActionUtil webActionUtil;
+
+
+@Parameters({"browserName","appURL","ETO","ITO"})
+@BeforeClass
+public void launchApp(@Optional(BROWSER_NAME)String browserName,
+		@Optional(APP_URL)String appURL,
+		@Optional(ETO)String ETO,
+		@Optional(ITO)String ITO)
+{
+	if(browserName.equalsIgnoreCase("chrome"))
+			{
+			System.setProperty(CHROME_KEY, CHROME_VALUE);
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--disable-notifications");
+			driver=new ChromeDriver(options);
+			}
+	else if(browserName.equalsIgnoreCase("firefox"))
 	{
-		System.setProperty(CHROME_KEY, CHROME_VALUE);
 		System.setProperty(GECKO_KEY, GECKO_VALUE);
-	}
-	
-	@BeforeMethod
-	public void openApp()
-	{
-		String appURL=GenericPropertyLib.getValue(CONFIG_PATH, "url");
-		long ito = Long.parseLong(ITO);
-		
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(ito, TimeUnit.SECONDS);
-		driver.get(appURL);
-	}
-	
-	@AfterMethod
-	public void closeApp(ITestResult result)
-	{
-		int status=result.getStatus(); 
-		String name=result.getName();
-		if(status==1)
-		{
-			Reporter.log("PASSED"+name, true);
+		FirefoxOptions options=new FirefoxOptions();
+		options.addPreference("dom.webnotifications.enabled",false);
+		driver=new  FirefoxDriver(options);
+				
+							
 		}
-		else
-		{
-			Reporter.log("FAILED"+name, true);
-			GetPhoto.getPhoto(driver, name);
-		}
-		driver.quit();
+	else
+	{
+		throw new IllegalArgumentException(browserName+"IS NOT SUPPORTED");
+	}
+	driver.manage().window().maximize();
+	long implicit=Long.parseLong(ITO);
+	driver.manage().timeouts().implicitlyWait(implicit ,TimeUnit.SECONDS);
+	driver.get(appURL);
+	long explicit=Long.parseLong(ETO);
+	webActionUtil=new WebActionUtil(driver, explicit);
+	}
+@Parameters({"un","pwd"})
+@BeforeMethod
+public void loginApp(@Optional(USERNAME)String un,
+		             @Optional(PASSWORD)String pwd)
+{
+	LoginPage login=new LoginPage(driver,webActionUtil);
+	login.login(un,pwd);
+	
+}
+@AfterMethod
+public void logoutAPP(ITestResult result)
+{
+	if(result.getStatus()==2)
+	{
+		GetPhoto.getPhoto(driver, result.getName());
+	}
+	else
+	{
+		HomePage home=new HomePage(driver,webActionUtil);
+		home.ClickOnlogOut();
 	}
 }
+@AfterClass(alwaysRun=true)
+public void closeApp()
+{
+	driver.quit();
+}
+}
+
