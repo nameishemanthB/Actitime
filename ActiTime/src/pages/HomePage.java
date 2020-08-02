@@ -4,8 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 public class HomePage
 {
+	String expectedTitle="Enter Time-Track";
 	@FindBy(id="logoutLink")
 	private WebElement logout;
 	
@@ -17,6 +19,10 @@ public class HomePage
 	
 	@FindBy(id="ext-gen23")
 	private WebElement calendar;
+	
+	@FindBy(xpath="//td[text()=\"Enter Time-Track\"]")
+	private WebElement title;
+	
 	
 	@FindBy(id="ext-gen44")
 	private WebElement calendarBox;
@@ -45,6 +51,10 @@ public class HomePage
 	public void searchTask(String text)
 	{
 		taskSeachField.sendKeys(text);
+	}
+	public void verifyTitle()
+	{
+		Assert.assertEquals(title, expectedTitle);
 	}
 }
 
