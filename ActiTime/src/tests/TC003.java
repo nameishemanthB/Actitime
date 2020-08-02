@@ -1,20 +1,28 @@
 package tests;
+
 import org.testng.annotations.Test;
-import genericlibs.ExcelLibrary;
+
+import pages.CreateChartPage;
 import pages.HomePage;
-import pages.LoginPage;
+import pages.ReportsPage;
+
 public class TC003 extends BaseTest
 {
 	@Test
-	public void HomePageTest()
+	public void toDownloadChart()
 	{
-		LoginPage l = new LoginPage(driver);
-		String un=ExcelLibrary.getValue(XL_PATH, "TC001", 1, 0);
-		String pwd=ExcelLibrary.getValue(XL_PATH, "TC001", 1, 1);
-		l.setUsername(un);
-		l.setPassword(pwd);
-		l.clickLogin();	
-		HomePage h = new HomePage(driver);
-		h.clickRadio();
+	HomePage home=new HomePage(driver,webActionUtil);
+	home.clickOnReport();
+	ReportsPage report=new ReportsPage(driver,webActionUtil);
+	report.clickOnCreateChart();
+	CreateChartPage createChart=new CreateChartPage(driver,webActionUtil);
+	createChart.clickOnAllStaff();
+	createChart.clickOnSelectedStaff();
+	createChart.clickOnUserWithoutdept();
+	createChart.clickOnApply();
+	createChart.clickOnExportBtn();
+	createChart.clickOnDwnldBtn();
+	createChart.clickOnDwnldCloseBtn();
 	}
 }
+

@@ -1,55 +1,31 @@
 package pages;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-public class HomePage
+
+import genericlibs.WebActionUtil;
+
+public class HomePage extends BasePage
 {
+    
 	@FindBy(id="logoutLink")
-	private WebElement logout;
-	
-	@FindBy(className="switcherBackground")
-	private WebElement readyRadio;
-	
-	@FindBy(id="taskSearchControl_field")
-	private WebElement taskSeachField;
-	
-	@FindBy(id="ext-gen23")
-	private WebElement calendar;
-	
-	@FindBy(id="ext-gen44")
-	private WebElement calendarBox;
-	
-	public HomePage(WebDriver driver)
+	private WebElement logoutButton;
+	@FindBy(id="container_reports")
+	private WebElement reportIcon;
+	public HomePage(WebDriver driver, WebActionUtil webActionUtil)
 	{
-		PageFactory.initElements(driver, this);
+		super(driver, webActionUtil);
+		
 	}
-	
-	public void clickLogout()
+	public void ClickOnlogOut()
 	{
-		logout.click();
+		webActionUtil.clickOnElement(logoutButton);
 	}
-	
-	public void selectDay(String month, String day)
+	public void clickOnReport()
 	{
-		calendar.click();
-		calendarBox.findElement(By.xpath("//button[.='"+month+"']/../../../../../../../..//span[.='"+day+"']")).click();	
+//		webActionUtil.jsClick(reportIcon);
+		webActionUtil.clickOnElement(reportIcon);
 	}
-	
-	public void clickRadio()
-	{
-		readyRadio.click();
-	}
-	
-	public void searchTask(String text)
-	{
-		taskSeachField.sendKeys(text);
-	}
+
 }
-
-
-
-
-
-
