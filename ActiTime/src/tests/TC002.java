@@ -14,5 +14,6 @@ public class TC002 extends BaseTest
 		l.setPassword(pwd);
 		l.clickLogin();
 		l.verifyErrorMessge();
+		Thread.sleep(2000);
 	}
 }
